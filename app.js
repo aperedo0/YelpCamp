@@ -18,11 +18,33 @@ var campgroundRoutes = require("./routes/campgrounds");
 var indexRoutes = require("./routes/index");
 
 //seedDB(); // seed the database
-mongoose.connect("mongodb://localhost/yelp_camp_v10", {
+
+/*
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://aperedo0:tecomatE1%21@cluster0-h0u68.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});*/
+
+
+
+mongoose.connect("mongodb+srv://aperedo0:shaolinfire@cluster0-h0u68.mongodb.net/test?retryWrites=true&w=majority", {
 	useNewUrlParser: true,
+	useCreateIndex: true,
 	useUnifiedTopology: true,
 	useFindAndModify: false
 });
+
+/*
+.then(() => {
+	console.log("connected to DB");
+}).catch(err => {
+	console.log("error: ", err.message);
+});*/
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
