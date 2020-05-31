@@ -29,9 +29,9 @@ client.connect(err => {
   client.close();
 });*/
 
+var url = "mongodb+srv://aperedo0:shaolinfire@cluster0-h0u68.mongodb.net/test?retryWrites=true&w=majority"
 
-
-mongoose.connect("mongodb+srv://aperedo0:shaolinfire@cluster0-h0u68.mongodb.net/test?retryWrites=true&w=majority", {
+mongoose.connect(process.env.DATABASEURL, {
 	useNewUrlParser: true,
 	useCreateIndex: true,
 	useUnifiedTopology: true,
