@@ -27,33 +27,25 @@ middlewareObj.checkCampgroundOwnership = function(req, res, next){
 	}
 };
 
-middlewareObj.checkCommentOwnership = function(req, res, next)
-{
-	if(req.isAuthenticated())
-	{
-		Comment.findById(req.params.comment_id, function(err, foundComment)
-		{
-			if(err)
-			{
+middlewareObj.checkCommentOwnership = function(req, res, next){
+	if(req.isAuthenticated()){
+		Comment.findById(req.params.comment_id, function(err, foundComment){
+			if(err){
 				res.redirect("back");
 			} 
-			else
-			{
+			else{
 				//does user own comment?
-				if(foundComment.author.id.equals(req.user._id))
-				{
+				if(foundComment.author.id.equals(req.user._id)){
 					next();
 				} 
-				else
-				{
+				else{
 					req.flash("error", "You don't have permission to do that");
 					res.redirect("back");
 				}
 			}
 		});
 	} 
-	else
-	{
+	else{
 		req.flash("error", "You need to be logged in to do that");
 		res.redirect("back");
 	}

@@ -42,9 +42,6 @@ router.post("/", middleware.isLoggedIn, (req, res) => {
 			});
 		}
 	});
-	//create new comments
-	//connect new comment to campground
-	//redirect campground show page
 });
 
 //COMMENT EDIT ROUTE

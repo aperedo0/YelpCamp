@@ -73,66 +73,6 @@ function seedDB(){
             });
         })
     }); 
-    //add a few comments
 }
  
 module.exports = seedDB;
-
-
-
-/*var mongoose = require("mongoose");
-var Comment = require("./models/comment");
-var Campground = require("./models/campground");
-
-var data = [
-	{
-		name: "Cloud's Rest",
-		image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRsd2t0darEiYwQ26k8InPcqRkrkPYlFdmAmKR-mc1JQz5QQa5j&usqp=CAU",
-		description: "The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum."
-	},
-	{
-		name: "Desert Mesa",
-		image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRsd2t0darEiYwQ26k8InPcqRkrkPYlFdmAmKR-mc1JQz5QQa5j&usqp=CAU",
-		description: "The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum."
-	},
-	{
-		name: "Canyon Floor",
-		image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRsd2t0darEiYwQ26k8InPcqRkrkPYlFdmAmKR-mc1JQz5QQa5j&usqp=CAU",
-		description: "The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum."
-	}
-]
-
-function seedDB(){
-	Campground.deleteMany({}, (err) => {
-		if(err){
-			console.log(err);
-		}
-		console.log("removed campgrounds");
-		for(var i = 0; i < data.length; i++)
-		{
-			Campground.create(data[i], (err, campground) => {
-				if(err){
-					console.log(err);
-				} else{
-					console.log("added a campground");
-					Comment.create(
-					{
-						text: "this place is great, but I wish there was internet",
-						author: "Home"
-					}, (err, comment) => {
-						if(err){
-							console.log(err);
-						} else {
-							//console.log(campground);
-							campground.comments.push(comment);
-							campground.save();
-							console.log("Create new comment");
-						}
-					});
-				}
-			});
-		}
-	});
-}
-
-module.exports = seedDB;*/

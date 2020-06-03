@@ -4,10 +4,6 @@ var passport = require("passport");
 var User = require("../models/user");
 var flash = require("connect-flash");
 
-//===========
-//AUTH ROUTES
-//===========
-
 //root route
 router.get("/", (req, res) => {
 	res.render("landing");

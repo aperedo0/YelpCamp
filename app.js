@@ -19,16 +19,6 @@ var indexRoutes = require("./routes/index");
 
 //seedDB(); // seed the database
 
-/*
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://aperedo0:tecomatE1%21@cluster0-h0u68.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});*/
-
 var url = "mongodb+srv://aperedo0:shaolinfire@cluster0-h0u68.mongodb.net/test?retryWrites=true&w=majority"
 
 mongoose.connect(process.env.DATABASEURL, {
@@ -37,13 +27,6 @@ mongoose.connect(process.env.DATABASEURL, {
 	useUnifiedTopology: true,
 	useFindAndModify: false
 });
-
-/*
-.then(() => {
-	console.log("connected to DB");
-}).catch(err => {
-	console.log("error: ", err.message);
-});*/
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
